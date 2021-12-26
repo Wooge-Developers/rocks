@@ -32,5 +32,10 @@
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"
         ></script>
+    
+       <div class="m-auto p-4 main">
+           {% block main %}{% endblock %}
+          </div>    
+        {% include "footer.twig" %}
     </body>
 </html>
