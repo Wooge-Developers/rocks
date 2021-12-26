@@ -2,26 +2,26 @@
 
 {% block main %}
 <div class="login-page">
-        <div id="title">
-            <h2>Login</h2>
-            <span>Login with your rocks! account</span>
-            <hr>
-        </div>
-        <span class="text">
-            <form action="sign_in" method="POST">
-                <span class="text-form">
-                    <b>Username</b><br>
-                    This is NOT case sensitive. <br>
-                    <span style="color:red">* this input is required <br></span>
+    <h2>Login</h2>
+     <p><a href="signup">Don't have a account yet?</a></p>
+     <hr>
+    <span class="text">
+        <form action="/login" method="POST">
+            <span class="text-form">
+            <b>Username:</b>
+            This is case sensitive. <br>
+           <span style="color:red">* this input is required</span>
+            </span>
+            <br>
+            <input type="text" name="rocks-username" placeholder="johncar96" class="generic-input"><br>
+            <span class="text-form">
+              <b>Password:</b><br>
+              <span style="color:red">* this input is required</span>
                 </span>
-                <input type="text" name="rocks_account_username" placeholder="Username" class="generic-input"><br>
-                <span class="text-form">
-                    <b>Password</b><br>
-                    <span style="color:red">* this input is required <br></span>
-                </span>
-                <input type="password" name="rocks_account_password" placeholder="Password" class="generic-input"><br><br>
-                <button type="button submit" class="btn btn-primary">Login</button>
-            </form>
-        </span> 
+                <br>
+                <input type="password" name="rocks-password" placeholder="the password" class="generic-input"><br><br>
+                <button type="submit button" class="btn btn-primary">Login</button>
+        </form>
+    </span>
     </div>
 {% endblock %}

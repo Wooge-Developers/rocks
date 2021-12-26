@@ -22,6 +22,10 @@ $router->map('GET', '/upload', function () {
     render('new_file', ['session' => ['username' => 'johncar96']]);
 });
 
+$router->map('GET', '/logout', function () {
+    render('logout', ['session' => ['username' => 'johncar96']]);
+});
+
 $match = $router->match();
 
 if (is_array($match) && is_callable($match['target'])) {
@@ -30,4 +34,5 @@ if (is_array($match) && is_callable($match['target'])) {
     header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
     render('errors/404');
 }
+
 
