@@ -1,5 +1,6 @@
 <?php
 require_once 'vendor/autoload.php';
+require 'db.php';
 
 function render(string $template, array $vars = [])
 {
@@ -9,9 +10,19 @@ function render(string $template, array $vars = [])
 }
 
 $router = new AltoRouter();
+// $db = new db();
+
+$metadata = [
+    "user_context" => [
+        "files_served" => 0,
+        "sites_on_site" => 0.
+    ],
+];
+
 
 $router->map('GET', '/', function () {
     render('index', ['session' => ['username' => 'johncar96']]);
+
 });
 
 $router->map('GET', '/login', function () {
@@ -24,6 +35,11 @@ $router->map('GET', '/upload', function () {
 
 $router->map('GET', '/logout', function () {
     render('logout', ['session' => ['username' => 'johncar96']]);
+});
+
+
+$router->map('GET', '/edit_file', function () {
+    render('edit_file', ['session' => ['username' => 'johncar96']]);
 });
 
 $match = $router->match();

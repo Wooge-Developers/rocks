@@ -1,0 +1,30 @@
+{% extends "./base.twig" %}
+{% block head %}
+    {{ parent() }}
+    <script src="/assets/codemirror.js"></script>
+    <link href="/assets/codemirror.csss" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+{% block main %}
+  <div class="edit-file-page">
+      <h2>Editing File (PLACEHOLDER)</h2>
+      <hr>
+      <span class="text">
+          <form action="update_file?file={{ file.file_name|escape }}" method="post">
+            <textarea name="contents" id="content-html" placeholder="Site HTML LOL" class="generic-input"></textarea><br><br>
+            <button type="submit button" class="btn btn-primary btn-sm">Update File</button> 
+        </form>
+      </span>
+
+     {# <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("content-html"), {
+            lineNumbers: true,
+            htmlMode: true,
+            matchBrackets: true
+        });
+        editor.setSize(650, 500);
+      </script> #}
+      <br>
+      <h3>THIS IS BROKEN LOL</h3>
+  </div>
+{% endblock %}
